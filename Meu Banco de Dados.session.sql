@@ -1,13 +1,15 @@
--- COLOCAR DATA NO USERS
+-- Estrutura da tabela users já existente
 -- CREATE TABLE users (
 --     id INT PRIMARY KEY AUTO_INCREMENT,
 --     username VARCHAR(255) NOT NULL,
 --     password VARCHAR(255) NOT NULL,
---     email VARCHAR(255) UNIQUE NOT NULL
+--     email VARCHAR(255) UNIQUE NOT NULL,
+--     is_moderator BOOLEAN DEFAULT FALSE,
+--     date_of_birth DATE NULL
+--     token VARCHAR (32) NOT NULL
 -- );
 
--- ALTER TABLE users ADD COLUMN is_moderator BOOLEAN DEFAULT FALSE;
--- ALTER TABLE users ADD COLUMN date_of_birth DATE NULL;
+-- INSERT INTO users (username, password, email) VALUES ('João Silva', 'senha_hashed', 'joao@gmail.com');
 
 -- CREATE TABLE transactions (
 --     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -67,4 +69,5 @@ SELECT * FROM users;
 
 -- UPDATE users SET is_moderator = FALSE WHERE is_moderator IS NULL;
 
--- DELETE FROM users WHERE id=3;
+-- DELETE FROM users WHERE id=5;
+
