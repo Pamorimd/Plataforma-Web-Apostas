@@ -67,6 +67,8 @@
 
 SELECT * FROM events;
 
+-- UPDATE events SET status = 'approved' WHERE status = 'finalizado';
+
 -- UPDATE users SET is_moderator = FALSE WHERE is_moderator IS NULL;
 
 -- DELETE FROM users WHERE id=5;

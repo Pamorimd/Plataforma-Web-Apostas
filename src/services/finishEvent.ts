@@ -27,7 +27,7 @@ export const finishEvent = async ({ eventId, result, moderatorId }: FinishEventD
         }
 
         if (event.status === 'finalizado') {
-            throw new Error('O evento já foi finalizado.');
+            return 'O evento já foi finalizado.'; // Retorna mensagem sem lançar erro
         }
 
         // Atualiza o status do evento para 'finalizado'
@@ -36,8 +36,9 @@ export const finishEvent = async ({ eventId, result, moderatorId }: FinishEventD
         // Calcula o total apostado pelos vencedores
         const [totalVencedores]: any = await pool.execute('SELECT SUM(amount) AS total_vencedores FROM bets WHERE event_id = ? AND won = TRUE', [eventId]);
 
+        // Se não houver vencedores, apenas finalize o evento e retorne uma mensagem
         if (totalVencedores[0].total_vencedores === null) {
-            throw new Error('Não há vencedores para este evento.');
+            return 'Evento finalizado, mas não há vencedores para distribuir os fundos.'; // Mensagem apropriada
         }
 
         // Atualiza as carteiras dos vencedores proporcionalmente
