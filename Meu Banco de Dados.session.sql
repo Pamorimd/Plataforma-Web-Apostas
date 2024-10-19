@@ -65,9 +65,29 @@
 -- -- Considerando que o id do usuário inserido será 1 (AUTO_INCREMENT)
 -- INSERT INTO wallets (user_id, balance) VALUES (1, 100.00);
 
-SELECT * FROM wallets;
+SELECT * FROM events;
 
 -- UPDATE users SET is_moderator = FALSE WHERE is_moderator IS NULL;
 
 -- DELETE FROM users WHERE id=5;
 
+-- ALTER TABLE events
+-- MODIFY COLUMN status ENUM('pending', 'approved', 'rejected', 'finalizado') DEFAULT 'pending';
+
+-- INSERT INTO events (name, date, status, created_by) 
+-- VALUES ('Evento Teste2', NOW(), 'approved', 2);
+
+-- CREATE TABLE bets (
+--     id INT AUTO_INCREMENT PRIMARY KEY,
+--     event_id INT NOT NULL,
+--     user_id INT NOT NULL,
+--     amount DECIMAL(10, 2) NOT NULL,
+--     won BOOLEAN DEFAULT FALSE,
+--     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+--     FOREIGN KEY (event_id) REFERENCES events(id) ON DELETE CASCADE,
+--     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+-- );
+
+-- INSERT INTO bets (event_id, user_id, amount, won) 
+-- VALUES (LAST_INSERT_ID(), 1, 100, TRUE),
+--        (LAST_INSERT_ID(), 2, 50, FALSE);

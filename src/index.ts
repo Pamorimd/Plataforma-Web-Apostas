@@ -4,6 +4,7 @@ import loginRoutes from './routes/loginRoutes';
 import evaluateNewEventRoutes from './routes/evaluateNewEventRoutes'; // Importa as rotas de avaliação
 import withdrawRoutes from './routes/withdrawRoutes';
 import addFundsRoutes from './routes/addFundsRoutes';
+import finishEventRoutes from './routes/finishEventRoutes'
 
 const app = express();
 app.use(express.json()); // Middleware para parsear JSON
@@ -14,6 +15,7 @@ app.use('/api', loginRoutes);
 app.use('/api', evaluateNewEventRoutes); // Adiciona as rotas de avaliação
 app.use('/api', addFundsRoutes);
 app.use('/api', withdrawRoutes);
+app.use('/api', finishEventRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
