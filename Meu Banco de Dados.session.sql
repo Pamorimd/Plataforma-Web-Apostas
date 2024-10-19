@@ -65,7 +65,7 @@
 -- -- Considerando que o id do usuário inserido será 1 (AUTO_INCREMENT)
 -- INSERT INTO wallets (user_id, balance) VALUES (1, 100.00);
 
-SELECT * FROM users;
+SELECT * FROM wallets;
 
 -- UPDATE users SET is_moderator = FALSE WHERE is_moderator IS NULL;
 
