@@ -69,7 +69,11 @@
 -- -- Considerando que o id do usuário inserido será 1 (AUTO_INCREMENT)
 -- INSERT INTO wallets (user_id, balance) VALUES (1, 100.00);
 
-SELECT * FROM events;
+-- SELECT balance FROM wallets WHERE user_id = 1; -- substitua 1 pelo ID do usuário que deseja consultar
+
+SELECT * FROM users;
+SELECT * FROM wallets;
+SELECT * FROM  bets;
 -- SELECT * FROM event_evaluations;
 
 -- UPDATE events SET status = 'approved' WHERE status = 'finalizado';
