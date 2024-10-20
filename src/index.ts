@@ -3,6 +3,7 @@ import express from 'express';
 import signUpRoutes from './routes/signUpRoutes'; 
 import loginRoutes from './routes/loginRoutes';
 import addNewEventRoutes from './routes/addNewEventRoutes';
+import getEventsRoutes from './routes/getEventsRoutes';
 import deleteEventRoutes from './routes/deleteEventRoutes';
 import evaluateNewEventRoutes from './routes/evaluateNewEventRoutes'; // Importa as rotas de avaliação
 //PARTE 2
@@ -19,6 +20,7 @@ app.use(express.json()); // Middleware para parsear JSON
 app.use('/api', signUpRoutes); // Adiciona as rotas de signup
 app.use('/api', loginRoutes);
 app.use('/api', addNewEventRoutes);
+app.use('/api', getEventsRoutes);
 app.use('/api', deleteEventRoutes);
 app.use('/api', evaluateNewEventRoutes); // Adiciona as rotas de avaliação
 app.use('/api', addFundsRoutes);
