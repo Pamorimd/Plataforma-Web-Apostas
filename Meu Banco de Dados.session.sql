@@ -71,9 +71,10 @@
 
 -- SELECT balance FROM wallets WHERE user_id = 1; -- substitua 1 pelo ID do usuário que deseja consultar
 
-SELECT * FROM users;
-SELECT * FROM wallets;
-SELECT * FROM  bets;
+SELECT * FROM events;
+-- SELECT * FROM users;
+-- SELECT * FROM wallets;
+-- SELECT * FROM  bets;
 -- SELECT * FROM event_evaluations;
 
 -- UPDATE events SET status = 'approved' WHERE status = 'finalizado';
