@@ -46,6 +46,8 @@
 
 -- ALTER TABLE events ADD description TEXT NOT NULL;
 
+-- ALTER TABLE events MODIFY COLUMN status ENUM('pending', 'approved', 'rejected', 'deleted') NOT NULL;
+
 -- CREATE TABLE event_evaluations (
 --     id INT AUTO_INCREMENT PRIMARY KEY,
 --     event_id INT NOT NULL,
@@ -68,7 +70,7 @@
 -- INSERT INTO wallets (user_id, balance) VALUES (1, 100.00);
 
 SELECT * FROM events;
-SELECT * FROM event_evaluations;
+-- SELECT * FROM event_evaluations;
 
 -- UPDATE events SET status = 'approved' WHERE status = 'finalizado';
 
