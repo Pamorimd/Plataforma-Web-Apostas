@@ -26,12 +26,28 @@ export const evaluateNewEvent = async (
             throw new Error('Moderador não encontrado.');
         }
 
-        // Ação de avaliação do evento
+        // Inicia a avaliação do evento
         if (action === 'approve') {
+            // Atualiza o status do evento
             await pool.execute('UPDATE events SET status = ? WHERE id = ?', ['approved', eventId]);
+
+            // Insere a avaliação na tabela event_evaluations
+            await pool.execute(
+                'INSERT INTO event_evaluations (event_id, moderator_id, action) VALUES (?, ?, ?)',
+                [eventId, moderatorId, action]
+            );
+
             return 'Evento aprovado com sucesso.';
         } else if (action === 'reject') {
-            await pool.execute('UPDATE events SET status = ?, rejection_reason = ? WHERE id = ?', ['rejected', reason, eventId]);
+            // Atualiza o status do evento e insere a razão de rejeição
+            await pool.execute('UPDATE events SET status = ? WHERE id = ?', ['rejected', eventId]);
+
+            // Insere a avaliação na tabela event_evaluations
+            await pool.execute(
+                'INSERT INTO event_evaluations (event_id, moderator_id, action, reason) VALUES (?, ?, ?, ?)',
+                [eventId, moderatorId, action, reason] 
+            );
+
             return 'Evento rejeitado com sucesso.';
         } else {
             throw new Error('Ação não reconhecida.');

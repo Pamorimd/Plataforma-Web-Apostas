@@ -44,6 +44,8 @@
 --     FOREIGN KEY (created_by) REFERENCES users(id) ON DELETE CASCADE
 -- );
 
+-- ALTER TABLE events ADD description TEXT NOT NULL;
+
 -- CREATE TABLE event_evaluations (
 --     id INT AUTO_INCREMENT PRIMARY KEY,
 --     event_id INT NOT NULL,
@@ -66,12 +68,13 @@
 -- INSERT INTO wallets (user_id, balance) VALUES (1, 100.00);
 
 SELECT * FROM events;
+SELECT * FROM event_evaluations;
 
 -- UPDATE events SET status = 'approved' WHERE status = 'finalizado';
 
 -- UPDATE users SET is_moderator = FALSE WHERE is_moderator IS NULL;
 
--- DELETE FROM users WHERE id=5;
+-- DELETE FROM events WHERE id=6;
 
 -- ALTER TABLE events
 -- MODIFY COLUMN status ENUM('pending', 'approved', 'rejected', 'finalizado') DEFAULT 'pending';
