@@ -28,10 +28,8 @@ export const loginUser = async (loginData: Login): Promise<{ token: string }> =>
 
     } catch (error: unknown) {
         if (error instanceof Error) {
-            // Se `error` é um objeto do tipo `Error`, você pode acessar `message`
             throw new Error('Erro: ' + error.message);
         } else {
-            // Se não for um objeto `Error`, trate como um erro desconhecido
             throw new Error('Erro desconhecido.');
         }
     }

@@ -5,7 +5,7 @@ import loginRoutes from './routes/loginRoutes';
 import addNewEventRoutes from './routes/addNewEventRoutes';
 import getEventsRoutes from './routes/getEventsRoutes';
 import deleteEventRoutes from './routes/deleteEventRoutes';
-import evaluateNewEventRoutes from './routes/evaluateNewEventRoutes'; // Importa as rotas de avaliação
+import evaluateNewEventRoutes from './routes/evaluateNewEventRoutes'; 
 //PARTE 2
 import addFundsRoutes from './routes/addFundsRoutes';
 import withdrawRoutes from './routes/withdrawRoutes';
@@ -17,12 +17,12 @@ const app = express();
 app.use(express.json()); // Middleware para parsear JSON
 
 // Registrar as rotas
-app.use('/api', signUpRoutes); // Adiciona as rotas de signup
+app.use('/api', signUpRoutes); 
 app.use('/api', loginRoutes);
 app.use('/api', addNewEventRoutes);
 app.use('/api', getEventsRoutes);
 app.use('/api', deleteEventRoutes);
-app.use('/api', evaluateNewEventRoutes); // Adiciona as rotas de avaliação
+app.use('/api', evaluateNewEventRoutes);
 app.use('/api', addFundsRoutes);
 app.use('/api', withdrawRoutes);
 app.use('/api', betOnEventRoutes);
